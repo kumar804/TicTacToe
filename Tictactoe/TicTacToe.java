@@ -10,9 +10,10 @@ public class TicTacToe {
         char choice = choose();
         char[] ticBoard = showBoard(board);
         move(ticBoard , choice);
+        showBoard(board);
     }
     /*
-    craeting board for TicTacToe of size 10 and ignoring
+     craeting board for TicTacToe of size 10 and ignoring
     0th index
      */
     public static char[] createBoard()
@@ -25,11 +26,12 @@ public class TicTacToe {
         return board;
     }
     /*
-    creating a function to chose letter x or o if user chose x then computer variable will be
+     creating a function to chose letter x or o if user chose x then computer variable will be
         x
      */
     public static char choose()
     {
+        // Taking user input
         Scanner sc = new Scanner(System.in);
         char computerVariable = 0 ;
         System.out.println("Enter the characater 'X' OR 'O' to play");
@@ -54,7 +56,7 @@ public class TicTacToe {
     }
     /*
     creating a function to show board of TicTacToe game at run
-    tim
+    time
      */
     public static char[] showBoard(char[] board)
     {
@@ -77,8 +79,9 @@ public class TicTacToe {
         int value = sc.nextInt();
         if(board[value] == ' ')
         {
-            System.out.println("Ready to move");
+            board[value] = choose;
         }
+        //added a condition for desired move
         else
         {
             System.out.println("Your desired place is not empty");
